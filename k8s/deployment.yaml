@@ -1,4 +1,4 @@
-# conversao-peso Deployment
+# Deployment do App
 
 apiVersion: apps/v1
 kind: Deployment
@@ -24,7 +24,7 @@ spec:
 ---
 
 
-# conversao-peso Service
+# Service do App
 
 apiVersion: v1
 kind: Service
