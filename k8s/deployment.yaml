@@ -1,0 +1,40 @@
+# conversao-peso Deployment
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-peso
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: app-peso
+  template:
+    metadata:
+      labels:
+        app: app-peso
+    spec:
+      containers:
+        - name: app-peso
+          image: renanbottero/conversao-peso:v1
+          ports:
+            - containerPort: 5000
+
+
+---
+
+
+# conversao-peso Service
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-peso
+spec:
+  selector:
+    app: app-peso
+  ports:
+    - port: 5000
+      targetPort: 80
+      nodePort: 30000
+  type: NodePort
