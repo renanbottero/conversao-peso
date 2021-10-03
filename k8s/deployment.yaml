@@ -34,7 +34,7 @@ spec:
   selector:
     app: app-peso
   ports:
-    - port: 5000
-      targetPort: 80
+    - port: 80
+      targetPort: 5000
       nodePort: 30000
   type: LoadBalancer
